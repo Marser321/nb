@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { TourOverlay } from "@/components/tour/TourOverlay";
 import { HelpFab } from "@/components/tour/HelpFab";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,14 +33,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark">
+    <html lang="es" suppressHydrationWarning>
       <body
         className={`${inter.variable} font-sans antialiased`}
       >
-        {children}
-        <TourOverlay />
-        <HelpFab />
-        <Toaster position="top-right" richColors />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <TourOverlay />
+          <HelpFab />
+          <Toaster position="top-right" richColors />
+        </ThemeProvider>
       </body>
     </html>
   );

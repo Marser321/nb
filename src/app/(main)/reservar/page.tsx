@@ -257,30 +257,30 @@ export default function ReservarPage() {
                 {/* Hero Section */}
                 <div className="relative h-[45vh] min-h-[400px] w-full flex items-center justify-center overflow-hidden mb-12">
                     {/* Background Overlay - Consistent with Home */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-background z-0" />
-                    <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay z-0" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-background to-background dark:from-black/95 dark:via-black/80 dark:to-background z-0" />
+                    <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-30 mix-blend-overlay z-0" />
 
                     {/* Floating Images Composition - Symmetrical & Clean */}
                     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                         {/* Left Column */}
                         <div className="absolute top-0 left-0 bottom-0 w-[15%] md:w-[25%] flex flex-col justify-center py-10 pl-4 md:pl-10">
                             <motion.div
-                                animate={{ y: [0, -15, 0] }}
+                                animate={{ y: [0, -15, 0], rotate: [0, -3, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                className="relative w-20 h-20 md:w-32 md:h-32 opacity-20"
+                                className="relative w-20 h-20 md:w-32 md:h-32 dark:opacity-20 opacity-90 shadow-2xl rounded-2xl overflow-hidden border border-white/50 dark:border-white/10"
                             >
-                                <Image src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80" alt="Scissor" fill className="object-cover rounded-2xl grayscale border border-white/10" />
+                                <Image src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80" alt="Scissor" fill className="object-cover dark:grayscale transition-all duration-500 hover:grayscale-0 hover:scale-110" />
                             </motion.div>
                         </div>
 
                         {/* Right Column */}
                         <div className="absolute top-0 right-0 bottom-0 w-[15%] md:w-[25%] flex flex-col justify-center py-10 pr-4 md:pr-10 items-end">
                             <motion.div
-                                animate={{ y: [0, 20, 0] }}
+                                animate={{ y: [0, 20, 0], rotate: [0, 3, 0] }}
                                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                className="relative w-24 h-24 md:w-40 md:h-40 opacity-20"
+                                className="relative w-24 h-24 md:w-40 md:h-40 dark:opacity-20 opacity-90 shadow-2xl rounded-full overflow-hidden border border-white/50 dark:border-white/10"
                             >
-                                <Image src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&q=80" alt="Clippers" fill className="object-cover rounded-full grayscale blur-[1px]" />
+                                <Image src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&q=80" alt="Clippers" fill className="object-cover dark:grayscale blur-[1px] dark:blur-[1px] blur-0 transition-all duration-500" />
                             </motion.div>
                         </div>
                     </div>
@@ -291,13 +291,13 @@ export default function ReservarPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <Badge variant="outline" className="mb-6 border-primary/50 text-white bg-white/5 backdrop-blur-md px-4 py-1 uppercase tracking-[0.2em] text-xs">
+                            <Badge variant="outline" className="mb-6 border-primary/20 text-primary bg-primary/5 dark:text-white dark:bg-white/5 backdrop-blur-md px-4 py-1 uppercase tracking-[0.2em] text-xs">
                                 Premium Booking
                             </Badge>
-                            <h1 className="text-4xl md:text-7xl font-bold mb-6 text-white tracking-tighter drop-shadow-2xl">
+                            <h1 className="text-4xl md:text-7xl font-bold mb-6 text-foreground dark:text-white tracking-tighter drop-shadow-2xl">
                                 Elegí tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-200 to-primary">Estilo</span>
                             </h1>
-                            <p className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed font-light">
+                            <p className="text-lg md:text-xl text-muted-foreground dark:text-zinc-300 max-w-2xl mx-auto leading-relaxed font-light">
                                 Seleccioná el servicio, tu profesional de confianza y el horario que mejor te quede.
                                 Nosotros nos ocupamos del resto.
                             </p>

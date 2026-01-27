@@ -90,7 +90,7 @@ export default function LoginPage() {
     };
 
     return (
-        <Card className="border-border/50 bg-card/50 backdrop-blur w-full max-w-md mx-auto">
+        <Card className="border-border/50 bg-white dark:bg-card/50 shadow-2xl dark:shadow-none backdrop-blur w-full max-w-md mx-auto transition-all duration-300">
             <CardHeader className="text-center">
                 <Link href="/" className="flex items-center justify-center gap-2 mb-4">
                     <Scissors className="h-8 w-8 text-primary" />

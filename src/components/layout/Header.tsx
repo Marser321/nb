@@ -19,6 +19,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { createClient } from "@/lib/supabase/client";
 import type { User as SupabaseUser } from "@supabase/supabase-js";
 import { toast } from "sonner";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navLinks = [
     { href: ROUTES.HOME, label: "Inicio" },
@@ -134,6 +135,8 @@ export function Header() {
                             )}
                         </Button>
 
+                        <ThemeToggle />
+
                         {/* User Menu */}
                         {user ? (
                             <DropdownMenu>
@@ -243,6 +246,11 @@ export function Header() {
                                     )}
 
                                     <div className="border-t border-border pt-4 mt-auto">
+                                        <div className="flex items-center justify-between px-2 mb-4">
+                                            <span className="text-sm font-medium">Tema</span>
+                                            <ThemeToggle />
+                                        </div>
+
                                         <Link
                                             href={ROUTES.ADMIN_LOGIN}
                                             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-amber-500 p-2"

@@ -50,8 +50,9 @@ export default function HomePage() {
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-background z-0" />
-        <div className="absolute inset-0 bg-noise opacity-30 mix-blend-overlay z-0" />
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-background to-background dark:from-black/95 dark:via-black/80 dark:to-background z-0" />
+        <div className="absolute inset-0 bg-noise opacity-10 dark:opacity-30 mix-blend-overlay z-0" />
 
         {/* Floating Images Composition - Symmetrical & Clean */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -59,59 +60,59 @@ export default function HomePage() {
           {/* Left Column - Tools & Details */}
           <div className="absolute top-0 left-0 bottom-0 w-[15%] md:w-[25%] flex flex-col justify-between py-20 pl-4 md:pl-10">
             <motion.div
-              animate={{ y: [0, -15, 0] }}
+              animate={{ y: [0, -15, 0], rotate: [0, -2, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-24 h-24 md:w-40 md:h-40 opacity-30"
+              className="relative w-24 h-24 md:w-40 md:h-40 dark:opacity-30 opacity-90 shadow-2xl rounded-2xl overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=400&q=80" alt="Atmosphere" fill className="object-cover rounded-2xl grayscale border border-white/10" />
+              <Image src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=400&q=80" alt="Atmosphere" fill className="object-cover dark:grayscale transition-all duration-500 hover:grayscale-0 hover:scale-110" />
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 20, 0] }}
+              animate={{ y: [0, 20, 0], scale: [1, 1.05, 1] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="relative w-32 h-32 md:w-56 md:h-56 opacity-20 ml-8 md:ml-12"
+              className="relative w-32 h-32 md:w-56 md:h-56 dark:opacity-20 opacity-80 ml-8 md:ml-12 shadow-2xl rounded-full overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80" alt="Tools" fill className="object-cover rounded-full grayscale blur-[1px]" />
+              <Image src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&q=80" alt="Tools" fill className="object-cover dark:grayscale blur-[1px] dark:blur-[1px] blur-0 transition-all duration-500" />
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-28 h-28 md:w-48 md:h-48 opacity-30"
+              className="relative w-28 h-28 md:w-48 md:h-48 dark:opacity-30 opacity-90 shadow-2xl rounded-[30px] overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&q=80" alt="Cut Detail" fill className="object-cover rounded-[30px]" />
+              <Image src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=400&q=80" alt="Cut Detail" fill className="object-cover dark:grayscale transition-all duration-500 hover:grayscale-0" />
             </motion.div>
           </div>
 
           {/* Right Column - Styles & Cuts */}
           <div className="absolute top-0 right-0 bottom-0 w-[15%] md:w-[25%] flex flex-col justify-between py-20 pr-4 md:pr-10 items-end">
             <motion.div
-              animate={{ y: [0, 15, 0] }}
+              animate={{ y: [0, 15, 0], rotate: [0, 3, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="relative w-28 h-28 md:w-48 md:h-48 opacity-30"
+              className="relative w-28 h-28 md:w-48 md:h-48 dark:opacity-30 opacity-90 shadow-2xl rounded-2xl overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400&q=80" alt="Style" fill className="object-cover rounded-2xl border border-white/10" />
+              <Image src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400&q=80" alt="Style" fill className="object-cover dark:grayscale transition-all duration-500 hover:grayscale-0" />
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [0, -20, 0], scale: [1, 1.05, 1] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-              className="relative w-32 h-32 md:w-56 md:h-56 opacity-20 mr-8 md:mr-12"
+              className="relative w-32 h-32 md:w-56 md:h-56 dark:opacity-20 opacity-80 mr-8 md:mr-12 shadow-2xl rounded-full overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&q=80" alt="Machine" fill className="object-cover rounded-full grayscale blur-[1px]" />
+              <Image src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=400&q=80" alt="Machine" fill className="object-cover dark:grayscale blur-[1px] dark:blur-[1px] blur-0 transition-all duration-500" />
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 10, 0], rotate: [0, -2, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              className="relative w-24 h-24 md:w-44 md:h-44 opacity-30"
+              className="relative w-24 h-24 md:w-44 md:h-44 dark:opacity-30 opacity-90 shadow-2xl rounded-[30px] overflow-hidden border border-white/50 dark:border-white/10"
             >
-              <Image src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=400&q=80" alt="Beard" fill className="object-cover rounded-[30px]" />
+              <Image src="https://images.unsplash.com/photo-1534297635766-a262cdcb8ee4?w=400&q=80" alt="Beard" fill className="object-cover dark:grayscale transition-all duration-500 hover:grayscale-0" />
             </motion.div>
           </div>
 
           {/* Center Glow (Subtle) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-background/60 blur-[100px] z-0 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-primary/5 dark:bg-background/60 blur-[100px] z-0 rounded-full" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -131,26 +132,26 @@ export default function HomePage() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-[1.1]">
               Tu Estilo,
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-primary to-yellow-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-primary to-yellow-600 dark:from-amber-200 dark:via-primary dark:to-yellow-500">
                 Nuestra Pasión
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
               Más que un corte, una experiencia de lujo diseñada para el caballero moderno.
               Reservá tu turno online y descubrí la evolución de la barbería clásica.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button id="hero-cta" size="lg" asChild className="text-lg h-14 px-10 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl shadow-primary/20">
+              <Button id="hero-cta" size="lg" asChild className="text-lg h-14 px-10 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl shadow-primary/20 transition-transform hover:scale-105">
                 <Link href={ROUTES.RESERVAR}>
                   Reservar Turno
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="text-lg h-14 px-10 rounded-full border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10">
+              <Button size="lg" variant="outline" asChild className="text-lg h-14 px-10 rounded-full border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-muted/50 text-foreground">
                 <Link href={ROUTES.TIENDA}>Ver Productos</Link>
               </Button>
             </div>
@@ -158,16 +159,16 @@ export default function HomePage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-20 max-w-xl mx-auto">
               <div className="space-y-1">
-                <p className="text-3xl md:text-5xl font-bold text-white">5+</p>
-                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Años</p>
+                <p className="text-3xl md:text-5xl font-bold text-foreground">5+</p>
+                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Años</p>
               </div>
               <div className="space-y-1">
-                <p className="text-3xl md:text-5xl font-bold text-white">1000+</p>
-                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Clientes</p>
+                <p className="text-3xl md:text-5xl font-bold text-foreground">1000+</p>
+                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Clientes</p>
               </div>
               <div className="space-y-1 border-primary/20">
                 <p className="text-3xl md:text-5xl font-bold text-primary">4.9</p>
-                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Estrellas</p>
+                <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Estrellas</p>
               </div>
             </div>
           </motion.div>
@@ -206,65 +207,68 @@ export default function HomePage() {
             {services.map((service, index) => (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group relative h-full"
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group relative h-full perspective-1000"
               >
-                <Card className="h-full border-white/5 bg-zinc-900/50 backdrop-blur-md overflow-hidden transition-all duration-500 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10">
-                  {/* Dynamic Background Image on Hover */}
-                  <div className="absolute inset-0 z-0">
-                    <Image
-                      src={service.image}
-                      alt={service.name}
-                      fill
-                      className="object-cover opacity-0 group-hover:opacity-20 transition-all duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10" />
-                  </div>
-
-                  {/* Floating Accessory/Effect */}
-                  <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 blur-[60px] rounded-full group-hover:bg-primary/30 transition-all duration-500" />
-
-                  <CardContent className="p-8 relative z-20 flex flex-col h-full">
-                    <div className="mb-6 flex justify-between items-start">
-                      <div className="h-14 w-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.3)]">
-                        <service.icon className="h-7 w-7 text-white transition-colors" />
-                      </div>
-                      {/* Animated Badge on Hover */}
-                      <motion.div
-                        className="bg-white/10 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        animate={{ rotate: [0, 15, -15, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <Scissors className="h-4 w-4 text-primary" />
-                      </motion.div>
+                <motion.div
+                  whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="h-full rounded-xl"
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  <Card className="h-full border-transparent bg-white dark:bg-zinc-900/50 shadow-xl dark:shadow-none dark:border-white/5 backdrop-blur-md overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 dark:hover:border-primary/50 relative z-10">
+                    {/* Dynamic Background Image on Hover (Subtle in Light, visible in Dark) */}
+                    <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 dark:group-hover:opacity-20 transition-opacity duration-700">
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        className="object-cover scale-110"
+                      />
+                      <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-primary transition-colors duration-300">
-                      {service.name}
-                    </h3>
-
-                    <p className="text-gray-400 mb-8 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                      {service.description}
-                    </p>
-
-                    <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
-                      <div className="flex items-center gap-2 text-sm text-gray-400 group-hover:text-white transition-colors">
-                        <Clock className="h-4 w-4 text-primary" />
-                        {service.duration} min
+                    <CardContent className="p-8 relative z-20 flex flex-col h-full">
+                      <div className="mb-6 flex justify-between items-start">
+                        <div className="h-14 w-14 rounded-2xl bg-primary/5 dark:bg-white/5 border border-primary/10 dark:border-white/10 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] group-hover:scale-110">
+                          <service.icon className="h-7 w-7 text-primary dark:text-white group-hover:text-white transition-colors duration-300" />
+                        </div>
+                        {/* Animated Badge */}
+                        <motion.div
+                          className="bg-primary/10 dark:bg-white/10 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                          animate={{ rotate: [0, 15, -15, 0] }}
+                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                          <Scissors className="h-4 w-4 text-primary" />
+                        </motion.div>
                       </div>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-sm text-primary">$</span>
-                        <span className="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors text-glow">
-                          {service.price}
-                        </span>
+
+                      <h3 className="text-2xl font-bold mb-3 text-foreground dark:text-white group-hover:text-primary transition-colors duration-300">
+                        {service.name}
+                      </h3>
+
+                      <p className="text-muted-foreground dark:text-gray-400 mb-8 leading-relaxed group-hover:text-foreground dark:group-hover:text-gray-200 transition-colors duration-300">
+                        {service.description}
+                      </p>
+
+                      <div className="mt-auto flex items-center justify-between pt-6 border-t border-border dark:border-white/10 group-hover:border-primary/20 transition-colors">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground dark:text-gray-400 group-hover:text-primary dark:group-hover:text-white transition-colors font-medium">
+                          <Clock className="h-4 w-4 text-primary" />
+                          {service.duration} min
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-sm text-primary font-semibold">$</span>
+                          <span className="text-2xl font-bold text-foreground dark:text-white group-hover:text-primary dark:group-hover:text-amber-400 transition-colors">
+                            {service.price}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               </motion.div>
             ))}
           </div>
