@@ -71,7 +71,7 @@ export function Header() {
 
     const getUserInitials = () => {
         if (!user) return "??";
-        const name = user.user_metadata?.full_name || user.email || "";
+        const name = user.user_metadata?.full_name || user.email || user.phone || "??";
         const parts = name.split(" ");
         if (parts.length >= 2) {
             return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
@@ -152,7 +152,7 @@ export function Header() {
                                             {user.user_metadata?.full_name || "Usuario"}
                                         </p>
                                         <p className="text-xs text-muted-foreground truncate">
-                                            {user.email}
+                                            {user.email || user.phone || ""}
                                         </p>
                                     </div>
                                     <DropdownMenuSeparator />
@@ -203,7 +203,7 @@ export function Header() {
                                                     {user.user_metadata?.full_name || "Usuario"}
                                                 </p>
                                                 <p className="text-xs text-muted-foreground truncate">
-                                                    {user.email}
+                                                    {user.email || user.phone || ""}
                                                 </p>
                                             </div>
                                         </div>

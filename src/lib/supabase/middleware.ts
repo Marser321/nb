@@ -56,15 +56,26 @@ export async function updateSession(request: NextRequest) {
         return NextResponse.redirect(url)
     }
 
-    // Protección simple para carpetas /admin usando la cookie demo
-    // Excluir explícitamente /admin-login para evitar bucles de redirección
-    if ((request.nextUrl.pathname.startsWith('/admin/') || request.nextUrl.pathname === '/admin') &&
-        request.nextUrl.pathname !== '/admin-login') {
-        const adminSession = request.cookies.get('admin_session');
-        if (adminSession?.value !== 'true') {
-            const url = request.nextUrl.clone();
-            url.pathname = '/admin-login';
-            return NextResponse.redirect(url);
+    // Protección de rutas de Admin con Supabase Auth
+    if (request.nextUrl.pathname.startsWith('/admin') && request.nextUrl.pathname !== '/admin-login') {
+        // 1. Si no hay usuario, redirigir a login admin
+        if (!user) {
+            const url = request.nextUrl.clone()
+            url.pathname = '/admin-login'
+            return NextResponse.redirect(url)
+        }
+
+        // 2. Opcional: Verificar rol de admin (por email o metadata)
+        // Por ahora, verificamos el email hardcoded para seguridad extra, o confiamos en RLS.
+        // Dado que la app usa un solo admin:
+        const isAdmin = user.email === 'admin@nbbarber.com';
+
+        if (!isAdmin) {
+            // Si esta logueado pero no es admin, redirigir a home o mostrar error
+            // Para UX, mandamos a home con parámetro de error? O simplemente home.
+            const url = request.nextUrl.clone()
+            url.pathname = '/'
+            return NextResponse.redirect(url)
         }
     }
 
